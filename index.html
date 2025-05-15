@@ -10,6 +10,81 @@
 </head>
 
 <body>
+    <div id="filter_menu" class="fixed inset-0 bg-[#1f3f7a80] flex items-start justify-center">
+        <div
+            class="bg-white w-full h-[420px] grid grid-cols-1 grid-rows-[0.5fr_1fr_1fr_1fr_2fr] lg:grid-rows-1 place-items-center gap-2 lg:h-[270px]">
+            <div class="w-full flex justify-between items-center lg:hidden">
+                <span class="text-[10px] m-[10px_0px_0px_9px]">Edit your search</span>
+                <button id="close_filter_menu" class="m-[10px_12px_0px_0px] font-bold">X</button>
+            </div>
+            <div class="w-[90%] border border-[#ececec] rounded-lg lg:hidden">
+                <div class="border-b border-b-[#ececec]">
+                    <div class="flex flex-col m-[4px_10px]">
+                        <span class="text-[7px] text-[#303030] font-semibold">LOCATION</span>
+                        <input class="text-[10px]" type="text" placeholder="Add Location">
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex flex-col m-[4px_10px]">
+                        <span class="text-[7px] text-[#303030] font-semibold">GUESTS</span>
+                        <span class="text-[10px]"><span id="total_guests_counter">0</span> Guests</span>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[85%] my-2 lg:hidden">
+                <div class="flex flex-col max-w-[80px]">
+                    <span class="text-[11px] font-bold text-[#333]">Adults</span>
+                    <span class="text-[10px] mb-1 text-[#c7c7c7]">Ages 13 or above</span>
+                    <div class="flex justify-between items-center">
+                        <button id="adults_minus_button"
+                            class="px-[5px] bg-[#e4e4e4] border border-[#a0a0a0] text-[10px] text-[#a0a0a0] rounded-sm">-</button>
+                        <span id="adults_counter" class="text-[10px] text-[#333] font-bold">0</span>
+                        <button id="adults_plus_button"
+                            class="px-[5px] bg-[#e4e4e4] border border-[#a0a0a0] text-[10px] text-[#a0a0a0] rounded-sm">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[85%] my-2 lg:hidden">
+                <div class="flex flex-col max-w-[80px]">
+                    <span class="text-[11px] font-bold text-[#333]">Children</span>
+                    <span class="text-[10px] mb-1 text-[#c7c7c7]">Ages 13 or above</span>
+                    <div class="flex justify-between items-center">
+                        <button id="children_minus_button"
+                            class="px-[5px] bg-[#e4e4e4] border border-[#a0a0a0] text-[10px] text-[#a0a0a0] rounded-sm">-</button>
+                        <span id="children_counter" class="text-[10px] text-[#333] font-bold">0</span>
+                        <button id="children_plus_button"
+                            class="px-[5px] bg-[#e4e4e4] border border-[#a0a0a0] text-[10px] text-[#a0a0a0] rounded-sm">+</button>
+                    </div>
+                </div>
+            </div>
+            <button
+                class="flex items-center w-[80px] justify-around bg-[#eb5757] p-[4px_8px] rounded-lg self-end mb-3 lg:hidden">
+                <img class="w-[13px]" src="./src/images/icons/search-white.svg" alt="">
+                <span class="text-[12px] text-white ">search</span>
+            </button>
+
+            <div
+                class="hidden w-[85%] border border-[#ebebeb] lg:grid lg:grid-cols-3 rounded-xl justify-self-center self-start mt-[50px]">
+                <div class="border-r border-[#ebebeb]">
+                    <div class="flex flex-col m-[4px_10px]">
+                        <span class="text-[7px] text-[#303030] font-semibold">LOCATION</span>
+                        <input class="text-[10px]" type="text" placeholder="Add Location">
+                    </div>
+                </div>
+                <div class="border-r border-[#ebebeb]">
+                    <div class="flex flex-col m-[4px_10px]">
+                        <span class="text-[7px] text-[#303030] font-semibold">GUESTS</span>
+                        <input class="text-[10px]" type="text" placeholder="Add guests">
+                    </div>
+                </div>
+                <button
+                    class="flex items-center w-[80px] justify-around bg-[#eb5757] p-[4px_8px] rounded-lg place-self-center">
+                    <img class="w-[13px]" src="./src/images/icons/search-white.svg" alt="">
+                    <span class="text-[12px] text-white ">search</span>
+                </button>
+            </div>
+        </div>
+    </div>
     <main class="flex flex-col items-center">
         <div class="w-full max-w-[250px] sm:max-w-[560px] lg:max-w-[784px] xl:max-w-[1024px]">
             <section
@@ -19,7 +94,7 @@
                         alt="Windbnd_Logo">
                 </div>
                 <div class="h-[60px] w-full flex justify-center items-center sm:w-[50%] sm:justify-end sm:mr-6 lg:mr-8">
-                    <div
+                    <button id="filter_button"
                         class="w-[80%] h-[35px] bg-white rounded-lg grid grid-cols-[2.5fr_2fr_0.9fr] shadow-[0px_2px_5px_#dadada] sm:max-w-[200px] xl:max-w-[250px] xl:h-[45px]">
                         <div
                             class="text-[9px] flex justify-center items-center border-r-1 border-[#ebebeb] text-[#ccc] xl:text-[12px]">
@@ -33,7 +108,7 @@
                         <span class="flex justify-center items-center">
                             <img src="./src/images/icons/search.svg" alt="" width="10px">
                         </span>
-                    </div>
+                    </button>
                 </div>
             </section>
 
