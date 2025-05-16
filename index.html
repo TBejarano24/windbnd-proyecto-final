@@ -10,81 +10,7 @@
 </head>
 
 <body>
-    <div id="filter_menu" class="fixed inset-0 bg-[#1f3f7a80] flex items-start justify-center">
-        <div
-            class="bg-white w-full h-[420px] grid grid-cols-1 grid-rows-[0.5fr_1fr_1fr_1fr_2fr] lg:grid-rows-1 place-items-center gap-2 lg:h-[270px]">
-            <div class="w-full flex justify-between items-center lg:hidden">
-                <span class="text-[10px] m-[10px_0px_0px_9px]">Edit your search</span>
-                <button id="close_filter_menu" class="m-[10px_12px_0px_0px] font-bold">X</button>
-            </div>
-            <div class="w-[90%] border border-[#ececec] rounded-lg lg:hidden">
-                <div class="border-b border-b-[#ececec]">
-                    <div class="flex flex-col m-[4px_10px]">
-                        <span class="text-[7px] text-[#303030] font-semibold">LOCATION</span>
-                        <input class="text-[10px]" type="text" placeholder="Add Location">
-                    </div>
-                </div>
-                <div class="flex flex-col">
-                    <div class="flex flex-col m-[4px_10px]">
-                        <span class="text-[7px] text-[#303030] font-semibold">GUESTS</span>
-                        <span class="text-[10px]"><span id="total_guests_counter">0</span> Guests</span>
-                    </div>
-                </div>
-            </div>
-            <div class="w-[85%] my-2 lg:hidden">
-                <div class="flex flex-col max-w-[80px]">
-                    <span class="text-[11px] font-bold text-[#333]">Adults</span>
-                    <span class="text-[10px] mb-1 text-[#c7c7c7]">Ages 13 or above</span>
-                    <div class="flex justify-between items-center">
-                        <button id="adults_minus_button"
-                            class="px-[5px] bg-[#e4e4e4] border border-[#a0a0a0] text-[10px] text-[#a0a0a0] rounded-sm">-</button>
-                        <span id="adults_counter" class="text-[10px] text-[#333] font-bold">0</span>
-                        <button id="adults_plus_button"
-                            class="px-[5px] bg-[#e4e4e4] border border-[#a0a0a0] text-[10px] text-[#a0a0a0] rounded-sm">+</button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-[85%] my-2 lg:hidden">
-                <div class="flex flex-col max-w-[80px]">
-                    <span class="text-[11px] font-bold text-[#333]">Children</span>
-                    <span class="text-[10px] mb-1 text-[#c7c7c7]">Ages 13 or above</span>
-                    <div class="flex justify-between items-center">
-                        <button id="children_minus_button"
-                            class="px-[5px] bg-[#e4e4e4] border border-[#a0a0a0] text-[10px] text-[#a0a0a0] rounded-sm">-</button>
-                        <span id="children_counter" class="text-[10px] text-[#333] font-bold">0</span>
-                        <button id="children_plus_button"
-                            class="px-[5px] bg-[#e4e4e4] border border-[#a0a0a0] text-[10px] text-[#a0a0a0] rounded-sm">+</button>
-                    </div>
-                </div>
-            </div>
-            <button
-                class="flex items-center w-[80px] justify-around bg-[#eb5757] p-[4px_8px] rounded-lg self-end mb-3 lg:hidden">
-                <img class="w-[13px]" src="./src/images/icons/search-white.svg" alt="">
-                <span class="text-[12px] text-white ">search</span>
-            </button>
 
-            <div
-                class="hidden w-[85%] border border-[#ebebeb] lg:grid lg:grid-cols-3 rounded-xl justify-self-center self-start mt-[50px]">
-                <div class="border-r border-[#ebebeb]">
-                    <div class="flex flex-col m-[4px_10px]">
-                        <span class="text-[7px] text-[#303030] font-semibold">LOCATION</span>
-                        <input class="text-[10px]" type="text" placeholder="Add Location">
-                    </div>
-                </div>
-                <div class="border-r border-[#ebebeb]">
-                    <div class="flex flex-col m-[4px_10px]">
-                        <span class="text-[7px] text-[#303030] font-semibold">GUESTS</span>
-                        <input class="text-[10px]" type="text" placeholder="Add guests">
-                    </div>
-                </div>
-                <button
-                    class="flex items-center w-[80px] justify-around bg-[#eb5757] p-[4px_8px] rounded-lg place-self-center">
-                    <img class="w-[13px]" src="./src/images/icons/search-white.svg" alt="">
-                    <span class="text-[12px] text-white ">search</span>
-                </button>
-            </div>
-        </div>
-    </div>
     <main class="flex flex-col items-center">
         <div class="w-full max-w-[250px] sm:max-w-[560px] lg:max-w-[784px] xl:max-w-[1024px]">
             <section
@@ -114,116 +40,12 @@
 
             <section class="h-[45px] w-full flex items-center justify-between 2xl:max-w-[1080px]">
                 <h2 class="font-bold ml-3 text-[#333] sm:ml-6 lg:ml-8 xl:text-xl">Stays in Finland</h2>
-                <span class="text-[9px] mr-3 text-[#605a59] sm:mr-6 lg:mr-8 xl:text-[15px]">12+ stays</span>
+                <span class="text-[9px] mr-3 text-[#605a59] sm:mr-6 lg:mr-8 xl:text-[15px]"><span
+                        id="stays_counter">0</span> stays</span>
             </section>
             <div id="stays_container"
-                class="grid grid-cols-1 grid-rows-14 sm:grid-cols-2 sm:grid-rows-7 sm:mx-6 sm:gap-x-2 lg:grid-cols-3 lg:grid-rows-5 lg:mx-8 lg:gap-x-4 2xl:max-w-[1080px]">
-                <div
-                    class="w-[230px] place-self-center m-[10px_10px_0_10px] flex flex-col gap-1 sm:w-[240px] lg:w-[220px] lg:h-[200px] xl:w-[300px] xl:h-[280px]">
-                    <img class="rounded-xl"
-                        src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
-                        alt="">
-                    <div class="flex items-center justify-between">
-                        <span
-                            class="text-[8px] font-bold border border-[#605a59] px-2 rounded-lg text-[#605a59] sm:text-[10px] xl:text-[12px] hidden">
-                            SUPERHOST
-                        </span>
-                        <span class="text-[9px] text-[#8d8d8d] ml-1.5 sm:text-[10px] xl:text-[12px]">Entire apartment .
-                            2
-                            beds</span>
-                        <span class="text-[8px] mr-1.5 text-[#605a59] flex gap-1 xl:text-[12px]"><img
-                                src="./src/images/icons/star.svg" alt="" width="10px">4.4</span>
-                    </div>
-                    <h3 class="text-[9px] font-bold text-[#605a59] ml-1.5 sm:text-[10px] xl:text-[15px]">Stylist
-                        Apartment
-                        in center of the
-                        city</h3>
-                </div>
-                <div
-                    class="w-[230px] place-self-center m-[10px_10px_0_10px] flex flex-col gap-1 sm:w-[240px] lg:w-[220px] lg:h-[200px] xl:w-[300px] xl:h-[280px]">
-                    <img class="rounded-xl"
-                        src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
-                        alt="">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[9px] ml-1.5 text-[#8d8d8d] sm:text-[10px] xl:text-[12px]">Entire apartment .
-                            2
-                            beds</span>
-                        <span class="text-[8px] mr-1.5 text-[#605a59] flex gap-1 xl:text-[12px]"><img
-                                src="./src/images/icons/star.svg" alt="" width="10px">4.4</span>
-                    </div>
-                    <h3 class="text-[9px] font-bold text-[#605a59] ml-1.5 sm:text-[10px] xl:text-[15px]">Stylist
-                        Apartment
-                        in center of the
-                        city</h3>
-                </div>
-                <div
-                    class="w-[230px] place-self-center m-[10px_10px_0_10px] flex flex-col gap-1 sm:w-[240px] lg:w-[220px] lg:h-[200px] xl:w-[300px] xl:h-[280px]">
-                    <img class="rounded-xl"
-                        src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
-                        alt="">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[9px] ml-1.5 text-[#8d8d8d] sm:text-[10px] xl:text-[12px]">Entire apartment .
-                            2
-                            beds</span>
-                        <span class="text-[8px] mr-1.5 text-[#605a59] flex gap-1 xl:text-[12px]"><img
-                                src="./src/images/icons/star.svg" alt="" width="10px">4.4</span>
-                    </div>
-                    <h3 class="text-[9px] font-bold text-[#605a59] ml-1.5 sm:text-[10px] xl:text-[15px]">Stylist
-                        Apartment
-                        in center of the
-                        city</h3>
-                </div>
-                <div
-                    class="w-[230px] place-self-center m-[10px_10px_0_10px] flex flex-col gap-1 sm:w-[240px] lg:w-[220px] lg:h-[200px] xl:w-[300px] xl:h-[280px]">
-                    <img class="rounded-xl"
-                        src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
-                        alt="">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[9px] ml-1.5 text-[#8d8d8d] sm:text-[10px] xl:text-[12px]">Entire apartment .
-                            2
-                            beds</span>
-                        <span class="text-[8px] mr-1.5 text-[#605a59] flex gap-1 xl:text-[12px]"><img
-                                src="./src/images/icons/star.svg" alt="" width="10px">4.4</span>
-                    </div>
-                    <h3 class="text-[9px] font-bold text-[#605a59] ml-1.5 sm:text-[10px] xl:text-[15px]">Stylist
-                        Apartment
-                        in center of the
-                        city</h3>
-                </div>
-                <div
-                    class="w-[230px] place-self-center m-[10px_10px_0_10px] flex flex-col gap-1 sm:w-[240px] lg:w-[220px] lg:h-[200px] xl:w-[300px] xl:h-[280px]">
-                    <img class="rounded-xl"
-                        src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
-                        alt="">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[9px] ml-1.5 text-[#8d8d8d] sm:text-[10px] xl:text-[12px]">Entire apartment .
-                            2
-                            beds</span>
-                        <span class="text-[8px] mr-1.5 text-[#605a59] flex gap-1 xl:text-[12px]"><img
-                                src="./src/images/icons/star.svg" alt="" width="10px">4.4</span>
-                    </div>
-                    <h3 class="text-[9px] font-bold text-[#605a59] ml-1.5 sm:text-[10px] xl:text-[15px]">Stylist
-                        Apartment
-                        in center of the
-                        city</h3>
-                </div>
-                <div
-                    class="w-[230px] place-self-center m-[10px_10px_0_10px] flex flex-col gap-1 sm:w-[240px] lg:w-[220px] lg:h-[200px] xl:w-[300px] xl:h-[280px]">
-                    <img class="rounded-xl"
-                        src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
-                        alt="">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[9px] ml-1.5 text-[#8d8d8d] sm:text-[10px] xl:text-[12px]">Entire apartment .
-                            2
-                            beds</span>
-                        <span class="text-[8px] mr-1.5 text-[#605a59] flex gap-1 xl:text-[12px]"><img
-                                src="./src/images/icons/star.svg" alt="" width="10px">4.4</span>
-                    </div>
-                    <h3 class="text-[9px] font-bold text-[#605a59] ml-1.5 sm:text-[10px] xl:text-[15px]">Stylist
-                        Apartment
-                        in center of the
-                        city</h3>
-                </div>
+                class="grid grid-cols-1 sm:grid-cols-2 sm:mx-6 sm:gap-x-2 lg:grid-cols-3 lg:mx-8 lg:gap-x-4 2xl:max-w-[1080px]">
+
             </div>
         </div>
     </main>
