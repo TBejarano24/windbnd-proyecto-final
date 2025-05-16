@@ -12,13 +12,17 @@
 <body>
 
     <main class="flex flex-col items-center">
+        <!-- Este div es el contenedor de todos los elementos. Se encarga de restringir el ancho que ocupan todos los elementos en todos los formatos de pantalla -->
         <div class="w-full max-w-[250px] sm:max-w-[560px] lg:max-w-[784px] xl:max-w-[1024px]">
+            <!-- Este section funciona como un sustituto de un header, pero dentro de un main -->
             <section
                 class="h-[95px] w-full flex flex-col items-center sm:flex-row sm:h-[60px] xl:h-[80px] 2xl:max-w-[1080px]">
+                <!-- Este div es el contenedor del logo -->
                 <div class="h-[35px] w-full flex items-center sm:w-[50%]">
                     <img class="ml-4 w-[65px] xl:w-[80px] sm:ml-6 lg:ml-8" src="./src/images/icons/logo-f7862584.svg"
                         alt="Windbnd_Logo">
                 </div>
+                <!-- Este div es el contenedor del botón de filtro -->
                 <div class="h-[60px] w-full flex justify-center items-center sm:w-[50%] sm:justify-end sm:mr-6 lg:mr-8">
                     <button id="filter_button"
                         class="w-[80%] h-[35px] bg-white rounded-lg grid grid-cols-[2.5fr_2fr_0.9fr] shadow-[0px_2px_5px_#dadada] sm:max-w-[200px] xl:max-w-[250px] xl:h-[45px]">
@@ -38,11 +42,13 @@
                 </div>
             </section>
 
+            <!-- Este section contiene el título de los elementos que se están buscando y un contador de resultados -->
             <section class="h-[45px] w-full flex items-center justify-between 2xl:max-w-[1080px]">
                 <h2 class="font-bold ml-3 text-[#333] sm:ml-6 lg:ml-8 xl:text-xl">Stays in Finland</h2>
                 <span class="text-[9px] mr-3 text-[#605a59] sm:mr-6 lg:mr-8 xl:text-[15px]"><span
                         id="stays_counter">0</span> stays</span>
             </section>
+            <!-- Este div, con grid layout, será el padre de todas las cards que se inserten de forma dinámica -->
             <div id="stays_container"
                 class="grid grid-cols-1 sm:grid-cols-2 sm:mx-6 sm:gap-x-2 lg:grid-cols-3 lg:mx-8 lg:gap-x-4 2xl:max-w-[1080px]">
 

@@ -4,8 +4,10 @@
  * que define el comportamiento del programa.
  */
 
+//Importando el array stays desde stays.js para acceder a todos los datos de las estancias
 import { stays } from "./stays.js";
 
+//Función para analizar la cantidad de camas que hay en las estancias a iterar y devolver el valor correspondiente
 function analyzeBeds(beds_value) {
   if (beds_value === null) {
     return "";
@@ -16,10 +18,16 @@ function analyzeBeds(beds_value) {
   }
 }
 
+//Declarando variables de elementos del DOM
+
+//Contenedor padre de las cards
 let staysContainer = document.querySelector("#stays_container");
+//Botón para acceder al menú de filtros
 let filterButton = document.querySelector("#filter_button");
+//Número que muestra la cantidad de resultados
 let staysCounter = document.querySelector("#stays_counter");
 
+//Se vacía el contenedor padre de las cards y se ejecuta la función que itera sobre todos los elementos de stays y los inserta en formato de cards
 staysContainer.textContent = "";
 createAndInsertStays(stays);
 
