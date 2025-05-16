@@ -75,7 +75,7 @@ filterButton.addEventListener("click", () => {
                     </div>
                 </div>
             </div>
-            <button
+            <button id="search_button_mobile"
                 class="flex items-center w-[80px] justify-around bg-[#eb5757] p-[4px_8px] rounded-lg self-end mb-3 lg:hidden">
                 <img class="w-[13px]" src="./src/images/icons/search-white.svg" alt="">
                 <span class="text-[12px] text-white ">search</span>
@@ -97,7 +97,7 @@ filterButton.addEventListener("click", () => {
 
 
                 </div>
-                <button
+                <button id="search_button_desktop"
                     class="flex items-center w-[80px] justify-around bg-[#eb5757] p-[4px_8px] rounded-lg place-self-center">
                     <img class="w-[13px]" src="./src/images/icons/search-white.svg" alt="">
                     <span class="text-[12px] text-white ">search</span>
@@ -220,6 +220,16 @@ filterButton.addEventListener("click", () => {
   let totalGuestsCounterDesktop = document.querySelector(
     "#total_guests_counter_desktop"
   );
+
+  let searchButtonMobile = document.querySelector("#search_button_mobile");
+  searchButtonMobile.addEventListener("click", () => {
+    filterMenu.remove();
+  });
+
+  let searchButtonDesktop = document.querySelector("#search_button_desktop");
+  searchButtonDesktop.addEventListener("click", () => {
+    filterMenu.remove();
+  });
 
   let guestFilterDesktop = document.querySelector("#guest_filter_desktop");
   guestFilterDesktop.addEventListener("click", () => {
@@ -562,4 +572,15 @@ function filterAndInsertStays(array, guests, location) {
       }
     }
   });
+  if (parseInt(staysCounter.textContent) === 0) {
+    staysContainer.insertAdjacentHTML(
+      "afterbegin",
+      `
+      <div class="h-[200px] w-full mx-auto flex flex-col justify-center items-center z-[-1] lg:col-start-2 lg:col-end-3">
+                    <h3 class="text-[22px] text-[#303030] font-bold">No results found</h3>
+                    <span class="text-[12px] text-[#858585] text-center">Try changing the filters to find other options</span>
+                </div>
+      `
+    );
+  }
 }
